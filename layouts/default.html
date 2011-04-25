@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="es-ES" class="ie ie6 ltie9 ltie8 ltie7"><![endif]-->
+<!--[if IE 7]><html lang="es-ES" class="ie ie7 ltie9 ltie8"><![endif]-->
+<!--[if IE 8]><html lang="es-ES" class="ie ie8 ltie9"><![endif]-->
+<!--[if IE 9]><html lang="es-ES" class="ie ie9"><![endif]-->
+<!--[if gt IE 9]><html lang="es-ES" class="ie"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="es-ES">
+<!--<![endif]-->
+<head>
+	<!--[if IE]><![endif]-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title><%= @item[:title] %></title>
+	
+	<!-- Styles -->
+	<link href="<%= relative_path_to('/flaminwork/flaminwork.min.css') %>" rel="stylesheet" />
+	<link href="<%= relative_path_to('/css/styles.css') %>" rel="stylesheet" />
+	
+	<!-- Scripts -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+	<script src="<%= relative_path_to('/flaminwork/flaminwork.min.js') %>"></script>
+	<script src="<%= relative_path_to('/js/main.js') %>"></script>
+</head>	
+<body>
+	<%= yield %>
+</body>
+</html>

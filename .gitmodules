@@ -1,0 +1,6 @@
+[submodule "flaminwork"]
+	path = flaminwork
+	url = git@github.com:juanghurtado/flaminwork.git
+[submodule "output/flaminwork"]
+	path = output/flaminwork
+	url = git@github.com:juanghurtado/flaminwork.git
