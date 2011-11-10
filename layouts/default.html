@@ -31,8 +31,10 @@
   <script src="<%= js_path('/main.js') %>"></script>
 </head>
 <body>
-  <h1><%= @item[:title] %></h1>
+  <div class="wrapper">
+    <h1><%= @item[:title] %></h1>
 
-  <%= yield %>
+    <%= yield %>
+  </div>
 </body>
 </html>
