@@ -284,13 +284,16 @@ dl.rich-messages dt, div.msg {
 
 /* =|Forms
 ----------------------------------------- */
+form .group p {
+  margin-bottom: 0.25em;
+}
 
 /* Fieldset
 ------------ */
 fieldset {
   border: 1px solid @fieldset-border-color;
   margin-bottom: 1em;
-  padding: 0.5em 0.5em 0 0.5em;
+  padding: 0.75em 0.75em 0.25em 0.75em;
   .rounded(4px);
 
   legend {
@@ -356,6 +359,16 @@ select {
   padding: 0.4em 0.5em;
 }
 
+.checkbox, .radio {
+
+  // To avoid weirdness with JSF output HTML
+  table, td {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+}
+
 /* Texts and textareas
 ----------------------- */
 input.text,
@@ -367,6 +380,33 @@ textarea {
     background-color: lighten(@error-background-color, 5%);
     border-color: lighten(@error-border-color, 5%);
     color: @error-text-color;
+  }
+}
+
+/* Checkboxes and radio buttons
+-------------------------------- */
+.checkbox, .radio {
+
+  .title {
+    font-weight: bold;
+  }
+
+  label {
+    display: inline-block;
+  }
+
+  &.horizontal {
+    overflow: hidden;
+
+    p {
+      float: left;
+      margin-right: 1em;
+    }
+
+    p.title {
+      float: none;
+      margin-right: 0;
+    }
   }
 }
 
