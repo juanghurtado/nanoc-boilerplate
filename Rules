@@ -1,0 +1,92 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+# ------------------------------------
+# Compiling
+# ------------------------------------
+
+# CSS folder
+compile "/css/*" do
+  if item[:extension] =~ /(css|less)/
+    filter :less if item[:extension] == 'less'
+  end
+end
+
+compile "/css/*", :rep => :compiled do
+  if item[:extension] =~ /(css|less)/
+    filter :less if item[:extension] == 'less'
+    filter :yuicsscompressor
+  end
+end
+
+# Javascript folder
+compile '/js/*' do
+end
+
+compile '/js/*', :rep => :compiled do
+  filter :yuijscompressor
+end
+
+# Images folder
+compile '/images/*' do
+end
+
+# Everything else
+compile '*' do
+  filter :erb
+  layout "default"
+end
+
+# ------------------------------------
+# Routing
+# ------------------------------------
+
+# CSS folder
+route "/css/*" do
+  if item[:extension] =~ /(css|less)/
+    item.identifier.chop + '.css'
+  end
+end
+
+route "/css/*", :rep => :compiled do
+  if item[:extension] =~ /(css|less)/
+    item.identifier.chop + '-min.css'
+  end
+end
+
+# Javascript folder
+route '/js/*' do
+  if item[:extension] =~ /(js)/
+    item.identifier.chop + '.js'
+  end
+end
+
+route '/js/*', :rep => :compiled do
+  if item[:extension] =~ /(js)/
+    item.identifier.chop + '-min.js'
+  end
+end
+
+# Images folder
+route '/images/*' do
+  "#{item.identifier.chop}.#{item[:extension]}"
+end
+
+# Everything else
+route '*' do
+  item.identifier + 'index.html'
+end
+
+# ------------------------------------
+# Layout
+# ------------------------------------
+layout '*', :erb

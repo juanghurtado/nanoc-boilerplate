@@ -1,0 +1,92 @@
+---
+title: Home
+---
+
+<% content_for :css do %>
+<% end %>
+
+<% content_for :js do %>
+<% end %>
+
+<div class="msg error">
+  <p>Lorem ipsum <a href="#">dolor sit</a> amet</p>
+</div>
+
+<div class="msg warn">
+  <p>Lorem ipsum <a href="#">dolor sit</a> amet</p>
+</div>
+
+<div class="msg info">
+  <p>Lorem ipsum <a href="#">dolor sit</a> amet</p>
+</div>
+
+<div class="msg success">
+  <p>Lorem ipsum <a href="#">dolor sit</a> amet</p>
+</div>
+
+<form>
+  <fieldset>
+    <legend>Sample form</legend>
+
+    <p>
+      <label for="input-text-error">Sample Input Text <span class="hint">(with error)</span> <span class="requerido">*</span></label>
+      <input type="text" class="text error" id="input-text-error" />
+      <span class="error">Error message</a>
+    </p>
+
+    <hr class="separator" />
+
+    <p>
+      <label for="input-textarea">Sample Input Textarea <span class="requerido">*</span></label>
+      <textarea id="input-textarea"></textarea>
+      <span class="hint">Sample hint text lorem ipsum dolor</span>
+    </p>
+
+    <hr class="separator" />
+
+    <div class="group">
+        <div class="col a-02">
+          <p>
+            <label for="input-select">Sample Select <span class="requerido">*</span></label>
+            <select id="input-select" class="chosen">
+              <option value="1">Sample value 1</option>
+              <option value="2">Sample value 2</option>
+              <option value="3">Sample value 3</option>
+              <option value="4">Sample value 4</option>
+            </select>
+          </p>
+        </div>
+
+        <div class="col">
+          <p>
+            <label for="input-text">Sample Input Text <span class="requerido">*</span></label>
+            <input type="text" class="text" id="input-text" />
+          </p>
+        </div>
+    </div>
+  </fieldset>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>header</th>
+      <th><a href="#">header</a></th>
+      <th>header</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>data</td>
+      <td><a href="#">data</a></td>
+      <td>data</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>data</td>
+      <td><a href="#">data</a></td>
+      <td>data</td>
+    </tr>
+  </tbody>
+</table>
