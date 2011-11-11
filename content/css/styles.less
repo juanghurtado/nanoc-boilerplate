@@ -291,8 +291,19 @@ dl.rich-messages dt, div.msg {
 
 /* =|Forms
 ----------------------------------------- */
-form .group p {
-  margin-bottom: 0.25em;
+form {
+
+  .group {
+    margin-bottom: -1em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  hr.separator {
+    margin: 1em 0;
+  }
 }
 
 /* Fieldset
@@ -300,17 +311,14 @@ form .group p {
 fieldset {
   border: 1px solid @fieldset-border-color;
   margin-bottom: 1em;
-  padding: 0.75em 0.75em 0.25em 0.75em;
+  padding: 0.75em 1em 0.25em 1em;
   .rounded(4px);
 
   legend {
     color: @legend-text-color;
+    font-size: 1.1em;
     font-weight: bold;
     padding: 0 0.25em;
-  }
-
-  p {
-    margin-bottom: 0.5em;
   }
 }
 
@@ -403,6 +411,11 @@ textarea {
 /* Checkboxes and radio buttons
 -------------------------------- */
 .checkbox, .radio {
+  margin-bottom: 1em;
+
+  p {
+    margin-bottom: 0.5em;
+  }
 
   .title {
     font-weight: bold;
