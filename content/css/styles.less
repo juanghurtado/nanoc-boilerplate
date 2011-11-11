@@ -110,9 +110,16 @@
 body {
   background-color: @global-background-color;
   color: @global-text-color;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.3;
+}
+
+body, input, button, select, option, optgroup, textarea {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+input, button, select, option, optgroup, textarea {
+  font-size: 1em;
 }
 
 .wrapper {
@@ -443,11 +450,45 @@ textarea {
 
 /* =|Buttons
 ----------------------------------------- */
-a.button, input.button, button.button {
+.button-colors {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  color: #333;
+}
 
-  &:focus, &:hover {}
+a.button, input.button, button.button {
+  .button-colors;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  .rounded(3px);
+
+  &:focus, &:hover {
+    background-color: darken(#eee, 5%);
+    border-color: darken(#ccc, 10%);
+  }
 
   &:active {}
+
+  &.disabled {
+    .button-colors;
+    cursor: default;
+    .opacity(0.5);
+  }
+}
+
+a.button {
+  padding: 0.22em 0.75em;
+}
+
+/* Button big
+-------------- */
+a.button-big, input.button-big, button.button-big {
+  font-size: 1.25em;
+}
+
+a.button-big {
+  padding: 0.185em 0.75em;
 }
 
 /* Button-01

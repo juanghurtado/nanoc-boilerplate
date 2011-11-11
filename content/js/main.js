@@ -22,8 +22,9 @@ if (typeof jQuery != "undefined") {
   ------------------------------------------------------------------------- */
   function init() {
     if (typeof expand != "undefined") {
-      expand.init();
+      buttons.init();
       chosen.init();
+      expand.init();
     }
   }
 
@@ -32,6 +33,26 @@ if (typeof jQuery != "undefined") {
   jQuery(document).ready(function($) {
     init();
   });
+
+  /* =BUTTONS
+  ------------------------------------------------------------------------- */
+  var buttons = {
+
+    /* =|Init method
+    ----------------------------------------- */
+    init : function() {
+      buttons.disabled();
+    },
+
+    /* =|Disabled
+    ----------------------------------------- */
+    disabled : function() {
+      jQuery('.button.disabled').on('click', function(event) {
+        event.preventDefault();
+      });
+    }
+
+  }
 
   /* =JQUERY CHOSEN
   ------------------------------------------------------------------------- */
