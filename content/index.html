@@ -24,7 +24,7 @@ title: Home
   <p>Lorem ipsum <a href="#">dolor sit</a> amet</p>
 </div>
 
-<form>
+<form method="post">
   <fieldset>
     <legend>Sample form</legend>
 
@@ -244,7 +244,11 @@ title: Home
       <a href="#" class="button button-01 button-big">Big Link</a>
     </p>
 
-
+    <p>
+      <input data-loading="Loading…" type="submit" id="sample-submit-loading" class="button button-01" value="Submit with loading" />
+      <button data-loading="Loading…" id="sample-button-loading" class="button button-01">Button with loading</button>
+      <a data-loading="Loading…" href="#" class="button button-01">Link with loading</a>
+    </p>
   </fieldset>
 </form>
 

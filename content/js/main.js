@@ -22,7 +22,8 @@ if (typeof jQuery != "undefined") {
   ------------------------------------------------------------------------- */
   function init() {
     if (typeof expand != "undefined") {
-      buttons.init();
+      buttons.disable();
+      buttons.loading.init();
       chosen.init();
       expand.init();
     }
@@ -38,19 +39,47 @@ if (typeof jQuery != "undefined") {
   ------------------------------------------------------------------------- */
   var buttons = {
 
-    /* =|Init method
+    /* =|Disable
     ----------------------------------------- */
-    init : function() {
-      buttons.disabled();
-    },
-
-    /* =|Disabled
-    ----------------------------------------- */
-    disabled : function() {
+    disable : function() {
       jQuery('.button.disabled').on('click', function(event) {
         event.preventDefault();
       });
-    }
+    },
+
+    /* =|Loading
+    ----------------------------------------- */
+    loading : {
+
+      init : function() {
+        jQuery('.button[data-loading]').on('click', function(event) {
+          buttons.loading.show(jQuery(this));
+        });
+      },
+
+      show : function($el) {
+        var $el = jQuery($el),
+        lt = $el.attr('data-loading'),
+        dt = $el.text() || $el.val();
+
+        $el.addClass('disabled')
+          .attr('disabled','disabled')
+          .attr('data-loading-default-text', dt);
+
+        $el[0].tagName == "INPUT" ? $el.val(lt) : $el.text(lt);
+      },
+
+      hide : function($el) {
+        var $el = jQuery($el),
+        t = $el.attr('data-loading-default-text');
+
+        $el.removeClass('disabled')
+          .attr('disabled','')
+          .attr('data-loading-default-text', '');
+
+        $el[0].tagName == "INPUT" ? $el.val(t) : $el.text(t);
+      }
+    },
 
   }
 
