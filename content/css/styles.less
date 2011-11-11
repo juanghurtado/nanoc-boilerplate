@@ -361,11 +361,18 @@ select {
 
 .checkbox, .radio {
 
-  // To avoid weirdness with JSF output HTML
+  // To avoid weirdness with JSF output
+  // HTML for checkboxes and radio buttons
   table, td {
     background: none;
     border: 0;
     padding: 0;
+  }
+
+  &.disabled {
+    label {
+      color: #aaa;
+    }
   }
 }
 
@@ -374,7 +381,10 @@ select {
 input.text,
 textarea {
 
-  &.disabled {}
+  &.disabled {
+    cursor: default;
+    .opacity(0.5);
+  }
 
   &.error {
     background-color: lighten(@error-background-color, 5%);

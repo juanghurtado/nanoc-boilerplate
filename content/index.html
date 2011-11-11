@@ -28,18 +28,36 @@ title: Home
   <fieldset>
     <legend>Sample form</legend>
 
-    <p>
-      <label for="input-text-error">Sample Input Text <span class="hint">(with error)</span> <span class="requerido">*</span></label>
-      <input type="text" class="text error" id="input-text-error" />
-      <span class="error">Error message</a>
-    </p>
+    <div class="group">
+      <div class="col a-02">
+        <p>
+          <label for="input-text">Sample Input Text <span class="requerido">*</span></label>
+          <input type="text" class="text" id="input-text" />
+        </p>
+      </div>
+
+      <div class="col a-02">
+        <p>
+          <label for="input-text-error">Sample Input Text <span class="hint">(with error)</span> <span class="requerido">*</span></label>
+          <input type="text" class="text error" id="input-text-error" />
+          <span class="error">Error message</a>
+        </p>
+      </div>
+
+      <div class="col">
+        <p>
+          <label for="input-text-disabled">Sample Input Text <span class="hint">(disabled)</span></label>
+          <input type="text" class="text disabled" disabled="disabled" id="input-text-disabled" value="Disabled field" />
+        </p>
+      </div>
+    </div>
 
     <hr class="separator" />
 
     <p>
       <label for="input-textarea">Sample Input Textarea <span class="requerido">*</span></label>
       <textarea id="input-textarea"></textarea>
-      <span class="hint">Sample hint text lorem ipsum dolor</span>
+      <span class="hint">Sample hint text outside <code>label</code> element</span>
     </p>
 
     <hr class="separator" />
@@ -47,7 +65,7 @@ title: Home
     <div class="group">
       <div class="col a-02">
         <p>
-          <label for="input-select">Sample Select <span class="requerido">*</span></label>
+          <label for="input-select">Sample Select</label>
           <select id="input-select" class="chosen">
             <option value="1">Sample value 1</option>
             <option value="2">Sample value 2</option>
@@ -59,10 +77,35 @@ title: Home
 
       <div class="col">
         <p>
-          <label for="input-text">Sample Input Text <span class="requerido">*</span></label>
-          <input type="text" class="text" id="input-text" />
+          <label for="input-select-disabled">Sample Select <span class="hint">(disabled)</span></label>
+          <select id="input-select-disabled" disabled="disabled" class="chosen">
+            <option value="1">Sample value 1</option>
+            <option value="2">Sample value 2</option>
+            <option value="3">Sample value 3</option>
+            <option value="4">Sample value 4</option>
+          </select>
         </p>
       </div>
+    </div>
+
+    <hr class="separator" />
+
+    <div class="checkbox disabled">
+      <p class="title">Disabled checkboxes and radio</p>
+
+      <p>
+        <label for="sample-checkbox-disabled-01">
+          <input type="checkbox" id="sample-checkbox-disabled-01" disabled="disabled" name="check" value="01">
+          Sample disabled checkbox 01
+        </label>
+      </p>
+
+      <p>
+        <label for="sample-checkbox-disabled-01">
+          <input type="radio" id="sample-checkbox-disabled-01" disabled="disabled" name="check" value="01">
+          Sample disabled radio 01
+        </label>
+      </p>
     </div>
 
     <hr class="separator" />
