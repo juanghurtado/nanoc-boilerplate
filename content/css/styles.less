@@ -360,6 +360,11 @@ textarea {
   padding: 0.5em;
 
   .rounded(4px);
+
+  &.disabled {
+    cursor: default;
+    .opacity(0.5);
+  }
 }
 
 select {
@@ -387,11 +392,6 @@ select {
 ----------------------- */
 input.text,
 textarea {
-
-  &.disabled {
-    cursor: default;
-    .opacity(0.5);
-  }
 
   &.error {
     background-color: lighten(@error-background-color, 5%);
