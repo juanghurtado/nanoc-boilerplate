@@ -52,19 +52,21 @@ if (typeof jQuery != "undefined") {
     loading : {
 
       init : function() {
-        jQuery('.button[data-loading]').on('click', function(event) {
-          buttons.loading.show(jQuery(this));
-        });
+        jQuery('.button[data-loading], .button.loading')
+          .on('click', function(event) {
+            buttons.loading.show(jQuery(this));
+          });
       },
 
       show : function($el) {
         var $el = jQuery($el),
-        lt = $el.attr('data-loading'),
+        lt = $el.attr('data-loading') || 'Loading…',
         dt = $el.text() || $el.val();
 
         $el.addClass('disabled')
           .attr('disabled','disabled')
-          .attr('data-loading-default-text', dt);
+          .attr('data-loading-default-text', dt)
+          .width($el.width());
 
         $el[0].tagName == "INPUT" ? $el.val(lt) : $el.text(lt);
       },
@@ -75,7 +77,8 @@ if (typeof jQuery != "undefined") {
 
         $el.removeClass('disabled')
           .attr('disabled','')
-          .attr('data-loading-default-text', '');
+          .attr('data-loading-default-text', '')
+          .width('auto');
 
         $el[0].tagName == "INPUT" ? $el.val(t) : $el.text(t);
       }
