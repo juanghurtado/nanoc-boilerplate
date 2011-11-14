@@ -21,12 +21,12 @@ if (typeof jQuery != "undefined") {
   /* =INIT
   ------------------------------------------------------------------------- */
   function init() {
-    if (typeof expand != "undefined") {
-      buttons.disable();
-      buttons.loading.init();
-      chosen.init();
-      expand.init();
-    }
+    jQuery('body:not(.js)').addClass('js');
+
+    buttons.disable();
+    buttons.loading.init();
+    chosen.init();
+    expand.init();
   }
 
   /* =DOCUMENT READY
