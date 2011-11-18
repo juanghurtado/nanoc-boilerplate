@@ -116,6 +116,13 @@
 @controls-border-color: #ccc;
 @controls-text-color: #444;
 
+// ---------------------------------------------------------------------------
+// BUTTONS
+// ---------------------------------------------------------------------------
+@buttons-background-color: #eee;
+@buttons-border-color: #ccc;
+@buttons-text-color: #333;
+
 
 /* =GLOBALS
 --------------------------------------------------------------------------- */
@@ -529,7 +536,7 @@ textarea {
 
   &.disabled {
     cursor: default;
-    .opacity(0.5);
+    .opacity(0.35);
   }
 }
 
@@ -618,16 +625,20 @@ textarea {
 
 .chzn-container-single .chzn-single div b,
 .chzn-container .chzn-results .highlighted {
-  background-color: #ddd;
-  color: #222;
+  background-color: darken(@controls-background-color, 10%);
+  color: darken(@global-text-color, 15%);
+}
+
+.chzn-disabled {
+  opacity: 0.35 !important;
 }
 
 /* =|Buttons
 ----------------------------------------- */
 .button-colors {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  color: #333;
+  background-color: @buttons-background-color;
+  border: 1px solid @buttons-border-color;
+  color: @buttons-text-color;
 }
 
 a.button, input.button, button.button {
@@ -639,8 +650,8 @@ a.button, input.button, button.button {
   text-align: center;
 
   &:focus, &:hover {
-    background-color: darken(#eee, 5%);
-    border-color: darken(#ccc, 10%);
+    background-color: darken(@buttons-background-color, 5%);
+    border-color: darken(@buttons-border-color, 10%);
     text-decoration: none;
   }
 
