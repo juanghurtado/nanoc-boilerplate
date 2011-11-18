@@ -233,6 +233,45 @@ span.icon {
   }
 }
 
+/* =|Tabs
+----------------------------------------- */
+ul.tabs {
+  border-bottom: 1px solid #ddd;
+  list-style-type: none;
+
+  li {
+    float: left;
+    margin-left: 0.5em;
+
+    a {
+      display: block;
+      line-height: 2.7153em;
+      padding: 0 0.75em;
+      text-decoration: none;
+      .border-radius(5px, 0, 0, 5px);
+
+      &:focus, &:hover {
+        background-color: #efefef;
+      }
+    }
+
+    &.current {
+      bottom: -1px;
+      position: relative;
+
+      a {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom: 0;
+        color: #444;
+        line-height: 2.6153em;
+        text-decoration: none;
+        .border-radius(5px, 0, 0, 5px);
+      }
+    }
+  }
+}
+
 /* =|Tables
 ----------------------------------------- */
 table {
