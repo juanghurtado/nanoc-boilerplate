@@ -21,8 +21,6 @@ if (typeof jQuery != "undefined") {
   /* =INIT
   ------------------------------------------------------------------------- */
   function init() {
-    jQuery('body:not(.js)').addClass('js');
-
     buttons.disable();
     buttons.loading.init();
     chosen.init();
