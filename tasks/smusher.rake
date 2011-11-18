@@ -1,3 +1,4 @@
+desc 'Compress all images at /output/'
 task :smusher do
   puts '---------------------------------'
   puts '| Smushering files at "/output/*"'
@@ -7,5 +8,3 @@ task :smusher do
   puts '| Smushering completed!'
   puts '---------------------------------'
 end
-
-desc 'Optimize images in "/output/*"'
