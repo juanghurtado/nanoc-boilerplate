@@ -13,12 +13,14 @@
     2.2.Visual
   3.COMPONENTS
     3.1.Icons
-    3.2.Tables
-    3.3.Pagination
-    3.4.Messages
-    3.5.Forms
-    3.6.Buttons
-    3.7.Boxes
+    3.2.Tabs
+    3.3.Expands
+    3.4.Tables
+    3.5.Pagination
+    3.6.Messages
+    3.7.Forms
+    3.8.Buttons
+    3.9.Boxes
   4.HEADER
   5.NAV
   6.CONTENT
@@ -40,6 +42,14 @@
 // VISUAL
 // ---------------------------------------------------------------------------
 @separator-background-color: #ddd;
+
+// ---------------------------------------------------------------------------
+// TABS
+// ---------------------------------------------------------------------------
+@tabs-border-color: #ddd;
+@tabs-background-color: #fff;
+@tabs-current-text-color: #333;
+@tabs-hover-background-color: #efefef;
 
 // ---------------------------------------------------------------------------
 // TABLES
@@ -236,7 +246,7 @@ span.icon {
 /* =|Tabs
 ----------------------------------------- */
 ul.tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid @tabs-border-color;
   list-style-type: none;
   margin-bottom: 1em;
 
@@ -252,7 +262,7 @@ ul.tabs {
       .border-radius(5px, 0, 0, 5px);
 
       &:focus, &:hover {
-        background-color: #efefef;
+        background-color: @tabs-hover-background-color;
       }
     }
 
@@ -261,10 +271,10 @@ ul.tabs {
       position: relative;
 
       a {
-        background-color: #fff;
-        border: 1px solid #ddd;
+        background-color: @tabs-background-color;
+        border: 1px solid @tabs-border-color;
         border-bottom: 0;
-        color: #444;
+        color: @tabs-current-text-color;
         line-height: 2.6153em;
         text-decoration: none;
         .border-radius(5px, 0, 0, 5px);
