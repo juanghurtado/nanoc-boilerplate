@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Juan G. Hurtado nanoc boilerplate
 ---
 
 <% content_for :css do %>
@@ -7,6 +7,23 @@ title: Home
 
 <% content_for :js do %>
 <% end %>
+
+<h2>Sample <code>&lt;h2&gt;</code> element <small>sample sub-heading</small></h2>
+<p>
+  Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <em>dolor in reprehenderit</em> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, <a href="#">sunt in culpa qui officia</a> deserunt mollit anim id est laborum.
+</p>
+
+<h3>Sample <code>&lt;h3&gt;</code> element <small>sample sub-heading</small></h3>
+<p><%= lorem 75 %></p>
+
+<h4>Sample <code>&lt;h4&gt;</code> element <small>sample sub-heading</small></h4>
+<p><%= lorem 75 %></p>
+
+<h5>Sample <code>&lt;h5&gt;</code> element <small>sample sub-heading</small></h5>
+<p><%= lorem 75 %></p>
+
+<h6>Sample <code>&lt;h6&gt;</code> element <small>sample sub-heading</small></h6>
+<p><%= lorem 75 %></p>
 
 <h2>Messages</h2>
 
@@ -60,8 +77,8 @@ title: Home
 
     <p>
       <label for="input-textarea">Sample Input Textarea <span class="required">✷</span></label>
-      <textarea id="input-textarea"></textarea>
-      <span class="hint">Sample hint text outside <code>label</code> element</span>
+      <textarea id="input-textarea" class="w-50"></textarea>
+      <span class="hint">Sample hint text outside <code>&lt;label&gt;</code> element</span>
     </p>
 
     <hr class="separator" />
@@ -248,8 +265,8 @@ title: Home
 
     <p>
       <input data-loading="Loading…" type="submit" id="sample-submit-loading" class="button button-01" value="Submit with loading" />
-      <button data-loading="Loading…" id="sample-button-loading" class="button button-01">Button with loading through <code>data-loading</code></button>
-      <a href="#" class="button button-01 loading">Link with loading through <code>class</code></a>
+      <button data-loading="Loading…" id="sample-button-loading" class="button button-01">Button with loading through "data-loading"</button>
+      <a href="#" class="button button-01 loading">Link with loading through "class"</a>
     </p>
   </fieldset>
 </form>

@@ -9,7 +9,8 @@
 ------------------------------------------------------------------------------
   1.IMPORTS & VARS
   2.GLOBALS
-    2.1.Visual
+    2.1.Layout
+    2.2.Visual
   3.COMPONENTS
     3.1.Icons
     3.2.Tables
@@ -33,6 +34,7 @@
 // ---------------------------------------------------------------------------
 @global-background-color: #fff;
 @global-text-color: #666;
+@global-link-text-color: #0069D6;
 
 // ---------------------------------------------------------------------------
 // VISUAL
@@ -111,28 +113,95 @@ body {
   background-color: @global-background-color;
   color: @global-text-color;
   font-size: 13px;
-  line-height: 1.3;
+  line-height: 1.3846em;
 }
 
 body, input, button, select, option, optgroup, textarea {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 input, button, select, option, optgroup, textarea {
   font-size: 1em;
 }
 
-.wrapper {
-  margin: 0 auto;
-  width: 960px;
+code {
+  background-color: #FEE9CC;
+  color: darken(@global-text-color, 15%);
+  font-family: "Monaco", "Andale Mono" , "Courier New", monospace;
+  font-size: .9230em;
+  font-style: normal;
+  font-weight: normal;
+  padding: 1px 3px;
+
+  .rounded(3px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: darken(@global-text-color, 15%);
+  line-height: 2.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  small {
+    color: lighten(@global-text-color, 20%);
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
+
+h1, h2, h3 {
+  small {
+    font-size: 0.8em;
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  color: lighten(@global-text-color, 5%);
+  font-size: 1.1em;
 }
 
 p {
   margin-bottom: 1em;
 }
 
+strong {
+  color: darken(@global-text-color, 15%);
+}
+
 a {
-  color: #02448A;
+  color: @global-link-text-color;
+
+  &:focus, &:hover {
+    color: darken(@global-link-text-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+/* =|Layout
+----------------------------------------- */
+.wrapper {
+  margin: 0 auto;
+  width: 960px;
 }
 
 /* =|Visual
@@ -186,6 +255,7 @@ table {
     text-align: left;
   }
 
+  // Header
   thead th {
     background: @table-header-background-color;
     border: 1px solid @table-header-border-color;
@@ -198,6 +268,7 @@ table {
     }
   }
 
+  // Body
   tbody tr {
 
     td {
@@ -223,6 +294,7 @@ table {
     }
   }
 
+  // Footer
   tfoot td {
     background-color: @table-footer-background-color;
     border: 1px solid@table-footer-border-color;
@@ -255,9 +327,7 @@ dl.rich-messages dt, div.msg {
   a {
     font-weight: bold;
 
-    &:focus, &:hover {
-      text-decoration: underline;
-    }
+    &:focus, &:hover {}
   }
 
   &.rich-messagesError, &.rich-messagesError a,
@@ -460,10 +530,7 @@ textarea {
   border: 0
 }
 
-.chzn-container-single .chzn-single div b {
-  background-color: #ddd;
-}
-
+.chzn-container-single .chzn-single div b,
 .chzn-container .chzn-results .highlighted {
   background-color: #ddd;
   color: #222;
@@ -488,6 +555,7 @@ a.button, input.button, button.button {
   &:focus, &:hover {
     background-color: darken(#eee, 5%);
     border-color: darken(#ccc, 10%);
+    text-decoration: none;
   }
 
   &:active {}
@@ -500,6 +568,7 @@ a.button, input.button, button.button {
 }
 
 a.button {
+  line-height: 1.5em;
   padding: 0.22em 0.75em;
 }
 
