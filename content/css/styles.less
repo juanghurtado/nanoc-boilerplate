@@ -272,6 +272,39 @@ ul.tabs {
   }
 }
 
+/* =|Expands
+----------------------------------------- */
+.expand-wrapper {
+
+  .expand-title {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:before {
+      content: '▸';
+      display: inline-block;
+      padding: 0 0.5em 0 0;
+    }
+
+    &.state-opened:before {
+      content: '▾';
+    }
+  }
+
+  .expand-body {}
+}
+
+body.js .expand-wrapper .expand-body {
+  display: none;
+}
+
+body.js .expand-wrapper.visible .expand-body {
+  display: block;
+}
+
 /* =|Tables
 ----------------------------------------- */
 table {
