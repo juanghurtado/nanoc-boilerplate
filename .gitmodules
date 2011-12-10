@@ -1,3 +1,6 @@
 [submodule "content/css/elements-less"]
 	path = content/css/elements-less
 	url = https://github.com/dmitryf/elements.git
+[submodule "content/js/chosen"]
+	path = content/js/chosen
+	url = https://github.com/harvesthq/chosen.git
