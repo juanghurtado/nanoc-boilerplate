@@ -1,0 +1,3 @@
+[submodule "content/js/chosen"]
+	path = content/js/chosen
+	url = https://github.com/harvesthq/chosen.git
