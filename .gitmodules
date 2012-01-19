@@ -1,3 +1,6 @@
 [submodule "content/js/chosen"]
 	path = content/js/chosen
 	url = https://github.com/harvesthq/chosen.git
+[submodule "content/css/elements"]
+	path = content/css/elements
+	url = https://github.com/dmitryf/elements.git
