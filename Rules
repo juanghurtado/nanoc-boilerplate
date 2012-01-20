@@ -21,23 +21,8 @@ compile "/css/*" do
   end
 end
 
-compile "/css/*", :rep => :compiled do
-  if item[:extension] =~ /(css|less)/
-    filter :less if item[:extension] == 'less'
-    filter :yuicsscompressor
-  end
-end
-
 # Javascript folder
 compile '/js/*' do
-end
-
-compile '/js/*', :rep => :compiled do
-  if (item.identifier =~ /(.min)/) == nil
-    filter :less if item[:extension] == 'less'
-    filter :yuicsscompressor if item[:extension] =~ /(css|less)/
-    filter :yuijscompressor if item[:extension] == 'js'
-  end
 end
 
 # Images folder
@@ -61,12 +46,6 @@ route "/css/*" do
   end
 end
 
-route "/css/*", :rep => :compiled do
-  if item[:extension] =~ /(css|less)/
-    item.identifier.chop + '.min.css'
-  end
-end
-
 # Javascript folder
 route '/js/*' do
   case item[:extension]
@@ -79,17 +58,6 @@ route '/js/*' do
     without_ext = "#{item.identifier.chop}"
 
     item[:extension] ? with_ext : without_ext
-  end
-end
-
-route '/js/*', :rep => :compiled do
-  if (item.identifier =~ /(.min)/) == nil
-    case item[:extension]
-    when /(js)/
-      item.identifier.chop + '.min.js'
-    when /(css)/
-      item.identifier.chop + '.min.css'
-    end
   end
 end
 
