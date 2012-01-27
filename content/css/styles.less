@@ -633,15 +633,15 @@ textarea {
 
 /* =|Buttons
 ----------------------------------------- */
-a.button, input.button, button.button {
+.button {
   background-color: #eee;
   border: 1px solid #ccc;
   .box-shadow(~"inset 1px 1px 0 rgba(255,255,255,.25),inset -1px -1px 0 rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.1)");
   cursor: pointer;
   display: inline-block;
-  height: auto;
   font-size: 1em;
-  line-height: 1;
+  height: auto;
+  line-height: normal;
   padding: 0.5em 1em;
   .rounded(4px);
   text-align: center;
@@ -664,13 +664,13 @@ a.button, input.button, button.button {
 
 /* Button big
 -------------- */
-a.button-big, input.button-big, button.button-big {
+.button-big {
   font-size: 1.25em;
 }
 
 /* Button-01
 ------------- */
-a.button-01, input.button-01, button.button-01 {
+.button-01 {
   @buttons-background-color: #0064CD;
   @buttons-border-color: darken(@buttons-background-color, 15%);
   @buttons-text-color: #fff;
@@ -678,6 +678,7 @@ a.button-01, input.button-01, button.button-01 {
   &:focus, &:hover {
     background-color: lighten(@buttons-background-color, 5%);
     border-color: darken(@buttons-border-color, 10%);
+    color: @buttons-text-color;
   }
 
   &:active {}
@@ -692,7 +693,7 @@ a.button-01, input.button-01, button.button-01 {
 
 /* Button-02
 ------------- */
-a.button-02, input.button-02, button.button-02 {
+.button-02 {
   @buttons-background-color: #eee;
   @buttons-border-color: darken(@buttons-background-color, 15%);
   @buttons-text-color: #555;
@@ -700,6 +701,7 @@ a.button-02, input.button-02, button.button-02 {
   &:focus, &:hover {
     background-color: darken(@buttons-background-color, 3%);
     border-color: darken(@buttons-border-color, 10%);
+    color: @buttons-text-color;
   }
 
   &:active {}
@@ -713,7 +715,7 @@ a.button-02, input.button-02, button.button-02 {
 
 /* Button-03
 ------------- */
-a.button-03, input.button-03, button.button-03 {
+.button-03 {
   @buttons-background-color: #57A957;
   @buttons-border-color: darken(@buttons-background-color, 15%);
   @buttons-text-color: #fff;
@@ -721,6 +723,7 @@ a.button-03, input.button-03, button.button-03 {
   &:focus, &:hover {
     background-color: darken(@buttons-background-color, 3%);
     border-color: darken(@buttons-border-color, 10%);
+    color: @buttons-text-color;
   }
 
   &:active {}
@@ -735,7 +738,7 @@ a.button-03, input.button-03, button.button-03 {
 
 /* Button-04
 ------------- */
-a.button-04, input.button-04, button.button-04 {
+.button-04 {
   @buttons-background-color: #C43C35;
   @buttons-border-color: darken(@buttons-background-color, 15%);
   @buttons-text-color: #fff;
@@ -743,6 +746,7 @@ a.button-04, input.button-04, button.button-04 {
   &:focus, &:hover {
     background-color: darken(@buttons-background-color, 3%);
     border-color: darken(@buttons-border-color, 10%);
+    color: @buttons-text-color;
   }
 
   &:active {}
