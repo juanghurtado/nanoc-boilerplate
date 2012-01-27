@@ -18,8 +18,8 @@
   <title><%= @item[:title] %></title>
 
   <!-- Styles -->
-  <link href="<%= css_path('framework.min.css') %>" rel="stylesheet" />
-  <link href="<%= js_path('chosen/chosen/chosen.min.css') %>" rel="stylesheet" />
+  <link href="<%= css_path('framework.css') %>" rel="stylesheet" />
+  <link href="<%= js_path('chosen/chosen/chosen.css') %>" rel="stylesheet" />
   <link href="<%= css_path('styles.css') %>" rel="stylesheet" />
   <%= content_for(@item, :css) %>
 
@@ -28,7 +28,7 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="<%= js_path('chosen/chosen/chosen.jquery.min.js') %>"></script>
+  <script src="<%= js_path('chosen/chosen/chosen.jquery.js') %>"></script>
   <%= content_for(@item, :js) %>
   <script src="<%= js_path('main.js') %>"></script>
 </head>
