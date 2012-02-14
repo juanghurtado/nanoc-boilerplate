@@ -1,5 +1,11 @@
-desc 'Minify all JS and CSS files at /output/'
-task :minify do
+require 'rake'
+
+usage       'minify'
+aliases     :minify
+summary     'CSS/JS minification'
+description 'Reduce size of CSS and JS files under /output/ through YUI Compressor'
+
+run do |opts, args, cmd|
   puts '------------------------------------'
   puts '| Minifying CSS files at "/output/*"'
   puts '------------------------------------'
