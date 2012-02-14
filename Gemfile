@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "nanoc"
+gem "nanoc", ">= 3.2"
 gem "rack"
 gem "mime-types"
 gem "guard"
